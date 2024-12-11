@@ -1,0 +1,119 @@
+/* Estilos generales para la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+h1, h2 {
+  color: #333;
+  text-align: center;
+}
+
+/* Contenedor principal */
+div {
+  width: 80%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+/* Estilos para la sección de productos */
+h2 {
+  margin-bottom: 20px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+}
+
+.product-item h3 {
+  margin: 10px 0;
+}
+
+.product-item p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el carrito */
+.cart {
+  margin-top: 40px;
+}
+
+.cart ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.cart ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+.cart p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Añadir un estilo para el total */
+.cart-total {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-item {
+    width: 90%;
+  }
+
+  .cart p {
+    font-size: 1.2rem;
+  }
+}
