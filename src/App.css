@@ -1,119 +1,122 @@
-/* Estilos generales para la página */
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f9;
 }
 
-h1, h2 {
-  color: #333;
-  text-align: center;
+/* Estilo para el contenido de la aplicación */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px; /* Para no solaparse con el nav-bar fijo */
 }
 
-/* Contenedor principal */
-div {
-  width: 80%;
-  max-width: 1200px;
-  margin-top: 20px;
+/* Estilos para el NavBar que siempre se encuentra arriba */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  z-index: 1000; /* Asegura que el NavBar esté siempre por encima */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para la sección de productos */
-h2 {
-  margin-bottom: 20px;
+.cart-icon {
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
+.cart-icon:hover {
+  color: #ffc107;
+}
+
+/* Estilos de la lista de productos */
 .product-list {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  margin-top: 80px; /* Para no solaparse con el NavBar */
+  width: 50%;
 }
 
 .product-item {
-  background-color: #fff;
+  background-color: white;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  margin-bottom: 20px;
-  padding: 20px;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease;
 }
 
-.product-item:hover {
-  transform: translateY(-5px);
-}
-
-.product-item h3 {
-  margin: 10px 0;
-}
-
-.product-item p {
-  font-size: 1.2rem;
-  color: #444;
-}
-
-button {
-  background-color: #4CAF50;
+.product-item button {
+  background-color: #28a745;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  margin-top: 10px;
   border-radius: 4px;
-  font-size: 1rem;
-  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #45a049;
+.product-item button:hover {
+  background-color: #218838;
 }
 
-/* Estilos para el carrito */
+/* Estilos del carrito desplegable */
 .cart {
-  margin-top: 40px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 30px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 80px; /* Para que no se solape con el NavBar */
+  right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .cart ul {
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.cart ul li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  font-size: 1.1rem;
-}
-
-.cart p {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: right;
-  margin-top: 10px;
-}
-
-/* Añadir un estilo para el total */
 .cart-total {
-  font-size: 1.4rem;
-  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
 }
 
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-  .product-list {
-    flex-direction: column;
-    align-items: center;
-  }
+.vaciar-carrito {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px;
+}
 
-  .product-item {
-    width: 90%;
-  }
-
-  .cart p {
-    font-size: 1.2rem;
-  }
+.vaciar-carrito:hover {
+  background-color: darkred;
 }
