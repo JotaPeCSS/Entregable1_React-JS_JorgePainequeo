@@ -1,10 +1,29 @@
-import React from 'react';
+import React from "react";
+import CartWidget from "./CartWidget";
+import logo from "../media/logo.png";
 
-const NavBar = () => {
+const styles = {
+  navbar: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#343a40",
+    color: "white",
+    padding: "10px 20px",
+  },
+  logo: {
+    height: "40px",
+    cursor: "pointer",
+  },
+};
+
+const NavBar = ({ cartItems, cartOpen, setCartOpen, emptyCart }) => {
   return (
-    <nav>
-      <h1>Mi Tienda Online</h1>
-      {/* Aquí puedes agregar más elementos, como el carrito */}
+    <nav style={styles.navbar}>
+      <a href="/">
+        <img src={logo} alt="Tienda Logo" style={styles.logo} />
+      </a>
+      <CartWidget cartItems={cartItems} cartOpen={cartOpen} setCartOpen={setCartOpen} emptyCart={emptyCart} />
     </nav>
   );
 };
