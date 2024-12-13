@@ -1,6 +1,5 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-import logo from "../media/logo.png";
 
 const styles = {
   navbar: {
@@ -20,10 +19,16 @@ const styles = {
 const NavBar = ({ cartItems, cartOpen, setCartOpen, emptyCart }) => {
   return (
     <nav style={styles.navbar}>
-      <a href="/">
-        <img src={logo} alt="Tienda Logo" style={styles.logo} />
+      {/* El logo redirige al home */}
+      <a href="https://JotaPeCSS.github.io/Entregable1_React-JS_JorgePainequeo">
+        <img src="./media/logo.png" alt="Tienda Logo" style={styles.logo} />
       </a>
-      <CartWidget cartItems={cartItems} cartOpen={cartOpen} setCartOpen={setCartOpen} emptyCart={emptyCart} />
+      <CartWidget
+        cartItems={cartItems}
+        cartOpen={cartOpen}
+        setCartOpen={setCartOpen}
+        emptyCart={emptyCart}
+      />
     </nav>
   );
 };
